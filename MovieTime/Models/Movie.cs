@@ -7,7 +7,7 @@ namespace MovieTime.Models
 {
     public class Movie
     { //This is a comment
-        public int Id { get; set; }
+        public int MovieId { get; set; }
         public string Title { get; set; }
         public string Summary { get; set; }
         public double Price { get; set; }
