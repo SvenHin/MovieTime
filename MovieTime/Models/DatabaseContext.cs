@@ -8,6 +8,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace MovieTime.Models
 {
+    /*
     public class Customers
     {
         [Key]
@@ -34,15 +35,15 @@ namespace MovieTime.Models
         public string ImageURL { get; set; }
         public virtual List<Customers> Customer { get; set; }
 
-    }
-    public class DatabaseContext : DbContext
+    }*/
+    public class Database : DbContext
     {
-        public DatabaseContext() : base(name="Customer")
+        public Database() : base("name=MovieDatabase")
         {
             Database.CreateIfNotExists();
         }
-        public DbSet<Customers> Customer { get; set; }
-        public DbSet<Movies> Movie { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Movie> Movies { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
