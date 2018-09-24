@@ -1,4 +1,5 @@
-﻿
+﻿@model List<MovieTime.Models.Movie>
+
 @{
     ViewBag.Title = "Index";
 }
@@ -21,17 +22,56 @@
     <button>Iron Man</button>
     <button>Predator</button>
     <button>It</button>
-</div>
-    
-    <style>
-        .btn {
-            height: 300px;
-            width: 200px;
-            background: url('../../Images/thehungergames.jpg');
-            background-color: red;
-            background-repeat: no-repeat;
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model[0].MovieId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].Summary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].ImageURL)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Summary)
+            </td>
+            <td>
+                
+                @Html.DisplayFor(modelItem => item.ImageURL)
+            </td>
+        </tr>
         }
-    </style>
+
+    </table>
+
+</div>
+
+<style>
+    .btn {
+        height: 300px;
+        width: 200px;
+        background: url('../../Images/thehungergames.jpg');
+        background-color: red;
+        background-repeat: no-repeat;
+    }
+</style>
 
 
 

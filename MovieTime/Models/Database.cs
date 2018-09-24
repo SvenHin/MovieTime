@@ -42,12 +42,8 @@ namespace MovieTime.Models
         {
             Database.CreateIfNotExists();
         }
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<Movie> Movies { get; set; }
-
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-        }
+        public DbSet<Customer> Customer { get; set; }
+        public DbSet<Movie> Movie { get; set; }
+        public DbSet<Genre> Genre { get; set; }
     }
 }
