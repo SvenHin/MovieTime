@@ -12,5 +12,6 @@ namespace MovieTime.Models
         public string Summary { get; set; }
         public double Price { get; set; }
         public string ImageURL { get; set; }
+        public virtual List<Genre> Genres { get; set; }
     }
 }
