@@ -10,19 +10,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<h2>Movie Time</h2>
-<!--skal gjøre om koden lit liste som vi ser nedenfor, men er usikker på om jeg skal bruke link eller button for elementene altså bildene av de ulike filmene-->
-<ul id="movieselection">
-    <li> </li>
-</ul>
-<div class="container">
-    <!--Må gjøres dynamisk med database, koden nedenfor skal bli gjort om til liste-->
-    <button class="btn">The Hunger Games</button>
-    <button>King Kong</button>
-    <button>Iron Man</button>
-    <button>Predator</button>
-    <button>It</button>
+<style>
+    .sidenav {
+        height: 100%;
+        width: 15%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: black;
+        overflow-x: hidden;
+        padding-top:20px;
+        -ms-overflow-style: none;
+    }
+    .sidenav::-webkit-scrollbar {display: none;}
 
+    .sidenav a {
+        padding: 6px 6px 6px 6px;
+        text-decoration: none;
+        font-size: 20px;
+        color: darkgrey;
+        display: block;
+    }
+    .sidenav a:hover {
+        color: lightgrey;
+    }
+    .main {
+        margin-left: 15%;
+    }
+
+    @@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+    .container {
+        padding-left: 15%;
+    }
+</style>
+
+<div class="sidenav">
+    <a href="#"> Action </a>
+    <a href="#"> Adventure </a>
+    <a href="#"> Animation </a>
+    <a href="#"> Children's </a>
+    <a href="#"> Comedy </a>
+    <a href="#"> Crime </a>
+    <a href="#"> Documentary </a>
+    <a href="#"> Drama </a>
+    <a href="#"> Fantasy </a>
+    <a href="#"> Film-Noir </a>
+    <a href="#"> Horror </a>
+    <a href="#"> Musical </a>
+    <a href="#"> Mystery </a>
+    <a href="#"> Romance </a>
+    <a href="#"> Sci-Fi </a>
+    <a href="#"> Thriller </a>
+    <a href="#"> War </a>
+    <a href="#"> Western </a>
+</div>
+
+<div class="container">
     <table class="table">
         <tr>
             <th>
@@ -42,36 +90,24 @@
 
         @foreach (var item in Model)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.MovieId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Summary)
-            </td>
-            <td>
-                
-                @Html.DisplayFor(modelItem => item.ImageURL)
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MovieId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Summary)
+                </td>
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.ImageURL)
+                </td>
+            </tr>
         }
 
     </table>
 
 </div>
-
-<style>
-    .btn {
-        height: 300px;
-        width: 200px;
-        background: url('../../Images/thehungergames.jpg');
-        background-color: red;
-        background-repeat: no-repeat;
-    }
-</style>
-
-
 
