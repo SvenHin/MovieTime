@@ -10,7 +10,7 @@
     <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 
 </head>
-
+<!--
 <style>
     .sidenav {
         height: 100%;
@@ -70,21 +70,54 @@
     <a href="#"> War </a>
     <a href="#"> Western </a>
 </div>
+    -->
+<div id="outer-container">
+    <div id="sidebar">
+        <nav class="navbar navbar-light bg-dark">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Action</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Action</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Action</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Documentary</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Horror</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Romance</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sci-Fi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Western</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div id="content">
+        <h2>Movie Time</h2>
 
+        <div class="container">
+            <ul class="list-inline">
+                @foreach (var item in Model)
+                {
+                    <li class="list-inline-item">
+                        <input type="image" src="@item.ImageURL" alt="bildetest" />
+                    </li>
+                }
 
-<h2>Movie Time</h2>
+            </ul>
 
-<div class="container">
-    <ul class="list-inline">
-        @foreach (var item in Model)
-        {
-            <li class="list-inline-item">
-                <input type="image" src="@item.ImageURL" alt="bildetest" />
-            </li>
-        }
-
-    </ul>
-
+        </div>
+    </div>
 </div>
 <script type="text/JavaScript">
     $(function () {
@@ -93,6 +126,38 @@
         }) 
     });
 </script>
+
+<style>
+    html {
+        height: 100%;
+    }
+
+    body {
+        margin: 0;
+        height: 100%;
+    }
+    #outer-container {
+        width: 100%;
+        height: 100%;
+    }
+    #sidebar {
+        width: 15%;
+        vertical-align: top;
+        float: left;
+        height: 100%
+       
+    }
+    #content {
+        width: 85%;
+        vertical-align: top;
+    }
+    .container {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    
+</style>
 
 
 
